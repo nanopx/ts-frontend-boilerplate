@@ -1,9 +1,15 @@
-function greeter(person: string) {
-  if(person.includes('Jane')) {
-    return "Hello! " + person;
+/// <reference path="../typings/main.d.ts" />
+
+const x: number = 1;
+
+function f(x: number, ...r: number[]): number {
+  if (r) {
+    return r[0];
   }
+
+  return x;
 }
 
-var user = "Jane User";
+f(2, 1, 3);
 
-document.body.innerHTML = greeter(user);
+console.log(process.env.NODE_ENV);

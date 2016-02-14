@@ -4,8 +4,9 @@
   "description": "Frontend boilerplate using typescript/babel/browserify/react etc.",
   "main": "index.js",
   "scripts": {
-    "watch": "watchify -p [ tsify --noImplicitAny ] -t babelify ./src/index.ts -o ./lib/build.js --debug",
-    "build": "NODE_ENV=production browserify ./src/index.ts -p tsify -t babelify -t envify -o ./lib/build.js",
+    "watch": "watchify -p tsify -t [ babelify --extensions .ts,.tsx ] -t envify ./src/index.ts -o ./static/bundle.js --debug -v",
+    "build": "browserify -p tsify -t [ babelify --extensions .ts,.tsx ] -t envify ./src/index.ts -o ./static/bundle.js --debug",
+    "build-prod": "NODE_ENV=production browserify -p tsify -t [ babelify --extensions .ts,.tsx ] -t envify ./src/index.ts -o ./lib/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "nanopx",

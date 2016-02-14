@@ -11,5 +11,7 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true
-  }
+  },
+  "compileOnSave": false,
+  "buildOnSave": false
 }
